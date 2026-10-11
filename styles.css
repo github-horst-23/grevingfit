@@ -136,3 +136,27 @@ body{background:radial-gradient(ellipse at 50% -15%,#dceaff 0,transparent 46%),v
 :root[data-theme="dark"] .modal::backdrop{background:rgba(3,9,18,.76)}
 :root[data-theme="dark"] .pill{background:#223b5d;color:#9fc3ff}
 :root[data-theme="dark"] .toast{background:#d9e8ff;color:#11203a}
+
+/* Expandable workout history */
+.history-detail{border-top:1px solid var(--line)}
+.history-detail:first-child{border-top:0}
+.history-detail>summary{list-style:none;cursor:pointer}
+.history-detail>summary::-webkit-details-marker{display:none}
+.history-detail>summary:focus-visible{outline:2px solid var(--blue,#2775d8);outline-offset:-2px;border-radius:12px}
+.history-detail .history-item{border:0}
+.history-chevron{color:var(--muted);font-size:20px;transition:transform .18s ease}
+.history-detail[open] .history-chevron{transform:rotate(180deg)}
+.history-detail-body{padding:0 8px 18px 60px}
+.history-exercise{padding:12px 0;border-top:1px solid var(--line)}
+.history-exercise h3{margin:0 0 10px;font-size:14px}
+.history-set-head,.history-set{display:grid;grid-template-columns:.55fr 1fr 1fr;gap:10px;padding:7px 10px;font-size:12px}
+.history-set-head{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.04em}
+.history-set:nth-child(odd){background:var(--panel2);border-radius:8px}
+.history-note{color:var(--muted);font-size:12px;margin:9px 0}
+.session-note{padding-top:12px;border-top:1px solid var(--line)}
+.session-exercise-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.session-exercise-head h3{margin-bottom:10px}
+.free-exercise-tools{display:flex;align-items:center;gap:2px;flex-shrink:0;margin-bottom:7px}
+.free-exercise-tools .icon-action{padding:6px 8px}
+.free-exercise-remove{color:#e34e79}
+@media(max-width:520px){.history-detail-body{padding-left:8px}.history-item{gap:9px}.history-date{width:38px}.history-desc span{display:block;margin-top:3px}.history-item>.pill{display:none}.session-exercise-head{align-items:flex-start}.free-exercise-tools .icon-action{padding:5px 6px}}
