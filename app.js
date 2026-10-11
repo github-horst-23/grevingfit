@@ -1,6 +1,6 @@
 const KEY='repday-data-v1';
 const CLOUD_CONFIG_KEY='carstenfit-supabase-config-v1',CLOUD_OWNER_KEY='carstenfit-cloud-owner-v1',CLOUD_VERSION_KEY='carstenfit-cloud-version-v1',CLOUD_DIRTY_KEY='carstenfit-cloud-dirty-v1';
-const CLOUD_DEFAULT_CONFIG={url:'https://tevmjyetjnnvgwvitvrr.supabase.co',key:'sb_publishable_uCM1uo3-Cab5tbRWKpbD1A_5tk1EeIv'};
+const CLOUD_DEFAULT_CONFIG={url:'https://ydmkutpcrurzsypszrob.supabase.co',key:'sb_publishable_bboirRaMhlGPM0eQ6TgYtg_mjHPdBqz'};
 const muscleGroups=['Beine','Rumpf','Rücken','Brust','Arme','Schultern','Sonstige'];
 const familyProfiles=['Carsten','Kathrin','Mathilda','Mariette'];
 const SPOTIFY_CLIENT_KEY='grevingfit-spotify-client-id-v1',SPOTIFY_REFRESH_KEY='grevingfit-spotify-refresh-v1',SPOTIFY_STATE_KEY='grevingfit-spotify-state-v1',SPOTIFY_VERIFIER_KEY='grevingfit-spotify-verifier-v1';
