@@ -1,0 +1,10 @@
+{
+  "name": "GrevingFit – dein Training",
+  "short_name": "GrevingFit",
+  "description": "Familien-Trainingspläne, Protokolle, Musik und Fortschritt an einem Ort.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f3f7fc",
+  "theme_color": "#1769e0",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

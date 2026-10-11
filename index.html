@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1769e0" />
+  <meta name="description" content="Trainingspläne und Trainingsverlauf für die Greving-Familie." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <title>GrevingFit – dein Training</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="appMenu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <a class="brand" href="#home" aria-label="GrevingFit Startseite"><span class="brand-mark">C</span><span>GrevingFit<span class="brand-dot">.</span></span></a>
+      <button class="button secondary small export-btn" id="exportMenuBtn" type="button" aria-label="Daten exportieren oder importieren" title="Daten exportieren oder importieren"><span aria-hidden="true">⇅</span> Export</button>
+      <button class="icon-button cloud-btn" id="cloudBtn" type="button" aria-label="Cloud-Synchronisierung einrichten" title="Cloud-Synchronisierung einrichten"><svg class="cloud-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 18.5h10a4 4 0 0 0 .4-8 6 6 0 0 0-11.6-1.3A4.7 4.7 0 0 0 7.5 18.5Z"/></svg><span class="cloud-check" id="cloudCheck" hidden aria-hidden="true">✓</span></button>
+      <button class="icon-button" id="installBtn" hidden aria-label="App installieren" title="App installieren">↓</button>
+    </header>
+    <nav class="menu-panel" id="appMenu" aria-label="Hauptnavigation" hidden>
+      <a href="#home" data-route="home"><span>⌂</span>Heute</a>
+      <a href="#plan" data-route="plan"><span>▤</span>Einheiten & Vorlagen</a>
+      <a href="#catalog" data-route="catalog"><span>＋</span>Übungskatalog</a>
+      <a href="#music" data-route="music"><span>♫</span>Musik</a>
+      <a href="#history" data-route="history"><span>◷</span>Verlauf</a>
+      <a href="#stats" data-route="stats"><span>↗</span>Auswertung</a>
+    </nav>
+    <main id="app" class="page"></main>
+  </div>
+  <dialog id="modal"></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      let refreshing = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (refreshing) return;
+        refreshing = true;
+        location.reload();
+      });
+      window.addEventListener('load', async () => {
+        try {
+          const registration = await navigator.serviceWorker.register('./service-worker.js', { updateViaCache: 'none' });
+          registration.addEventListener('updatefound', () => {
+            const worker = registration.installing;
+            if (!worker) return;
+            worker.addEventListener('statechange', () => {
+              if (worker.state === 'installed' && navigator.serviceWorker.controller && confirm('Eine neue Version der App ist verfügbar. Jetzt aktualisieren?')) {
+                worker.postMessage('skipWaiting');
+              }
+            });
+          });
+          registration.update().catch(() => {});
+        } catch (error) {
+          console.warn('Service Worker konnte nicht registriert werden:', error);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
