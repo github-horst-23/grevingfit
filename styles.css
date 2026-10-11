@@ -95,3 +95,26 @@ body{background:radial-gradient(ellipse at 50% -15%,#dceaff 0,transparent 46%),v
 .session-submit{margin-top:16px}
 .spotify-controls{display:flex;gap:8px;margin:12px 0}
 @media(max-width:650px){.app-shell{padding-left:16px;padding-right:16px;padding-bottom:20px}.topbar{gap:8px}.topbar .brand{gap:7px;font-size:19px}.menu-toggle{flex-basis:38px;width:38px;height:38px;padding:7px}.menu-panel{top:calc(64px + 8px);left:12px}.export-btn{padding:7px 8px;font-size:10px}.cloud-btn{flex-basis:38px;width:38px;height:38px}}
+
+.spotify-brand{display:inline-flex;align-items:center;color:#0d8f50;font-size:13px;font-weight:800;letter-spacing:.02em}
+.spotify-now{display:flex;align-items:center;gap:14px;min-height:72px}
+.spotify-now>img{width:68px;height:68px;object-fit:cover;border-radius:10px;background:var(--surface-2)}
+.spotify-now-info{display:flex;flex-direction:column;gap:5px;min-width:0}
+.spotify-now-info a{color:var(--text);text-decoration:none}
+.spotify-now-info strong{font-size:17px}
+.spotify-now-info span{color:var(--muted);font-size:13px;overflow-wrap:anywhere}
+.spotify-timeline{display:grid;grid-template-columns:38px 1fr 38px;align-items:center;gap:8px;margin-top:12px;color:var(--muted);font-size:11px}
+.spotify-timeline input{width:100%;accent-color:#16884a}
+.spotify-controls{display:flex;align-items:center;justify-content:center;gap:12px;margin:14px 0 0}
+.spotify-play{width:46px;height:46px;border-radius:50%;font-size:18px}
+.spotify-search-form{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:end}
+.spotify-search-form .field{margin:0}
+.spotify-results{display:grid;gap:8px;margin-top:12px}
+.spotify-result{display:grid;grid-template-columns:54px minmax(0,1fr) auto;align-items:center;gap:12px;padding:9px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.spotify-result>img{width:54px;height:54px;object-fit:cover;border-radius:8px;background:var(--surface-2)}
+.spotify-result-info{display:flex;flex-direction:column;gap:3px;min-width:0}
+.spotify-result-info a{color:var(--text);text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.spotify-result-info span,.spotify-result-info small{color:var(--muted);font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.spotify-result-actions{display:flex;gap:6px}
+.spotify-connect-card code{font-size:11px;overflow-wrap:anywhere}
+@media(max-width:520px){.spotify-search-form{grid-template-columns:1fr}.spotify-search-form>.button{width:100%}.spotify-result{grid-template-columns:46px minmax(0,1fr) auto;gap:8px;padding:7px}.spotify-result>img{width:46px;height:46px}.spotify-result-actions{gap:4px}.spotify-result-actions .button{min-width:34px;padding:6px}.spotify-now>img{width:58px;height:58px}}

@@ -19,7 +19,7 @@ Es gibt keinen Build-Schritt. `index.html`, `app.js`, `styles.css`, `manifest.we
 
 ## Supabase-Cloud für vier Personen
 
-Die App enthält die URL und den Publishable Key des konfigurierten Supabase-Projekts. Jeder Benutzer erstellt ein eigenes Supabase-Konto mit E-Mail und Passwort. Die Profilwahl ist fest an diese E-Mail-Adressen gebunden: Carsten `grevingcarsten@gmail.com`, Kathrin `grevingkathrin@gmail.com`, Mathilda `mathildagreving@gmail.com`, Mariette `mariettegreving@gmail.com`. Die Datenbank bindet Trainingseinträge an die Supabase-User-ID und schützt sie per Row Level Security.
+Die App enthält die URL und den Publishable Key des konfigurierten Supabase-Projekts. Jeder Benutzer erstellt ein eigenes Supabase-Konto mit E-Mail und Passwort. Die Profilwahl ist an die jeweils freigegebene E-Mail-Adresse gebunden; die Zuordnung ist in App und Datenbankregel hinterlegt. Die Datenbank bindet Trainingseinträge an die Supabase-User-ID und schützt sie per Row Level Security.
 
 1. Im Supabase-Projekt unter **SQL Editor** den Inhalt von [`supabase-setup.sql`](supabase-setup.sql) ausführen. Das Skript legt Datentabellen und RLS-Regeln an, einschließlich der Profil-/E-Mail-Zuordnung. Führe es nach Regeländerungen erneut aus; es kann wiederholt werden.
 2. Unter **Authentication → Providers** E-Mail-Anmeldung aktivieren. Unter **URL Configuration** die HTTPS-URL von GrevingFit als Site URL setzen.
@@ -32,7 +32,7 @@ Bei der ersten Anmeldung übernimmt GrevingFit lokale Daten, wenn noch kein ande
 
 ## Spotify Premium Player
 
-Der bisherige Embed-Player ist durch den Spotify Web Playback SDK ersetzt. Damit kann ein Spotify-Premiumkonto vollständige Titel im Browser wiedergeben. Spotify verlangt dafür Premium, ein Spotify-Developer-App-Client und die passende Redirect URI; der SDK streamt nicht mit einem beliebigen Embed-Link allein.
+Die Musikansicht enthält Spotify-Katalogsuche für Tracks und Playlists, einen GrevingFit-Player mit Cover, Fortschritt, Vor/Zurück und Suche sowie Spotify-Links zu den Originalinhalten. Der Player nutzt den Spotify Web Playback SDK; damit kann ein Spotify-Premiumkonto vollständige Titel im Browser wiedergeben. Spotify verlangt dafür Premium, ein Spotify-Developer-App-Client und die passende Redirect URI; der SDK streamt nicht mit einem beliebigen Embed-Link allein.
 
 1. Im [Spotify Developer Dashboard](https://developer.spotify.com/dashboard) eine App anlegen und **Web Playback SDK** aktivieren.
 2. Als Redirect URI exakt die von GrevingFit in **Musik** angezeigte HTTPS-Adresse eintragen (inklusive App-Pfad, ohne `#`-Route). Die URI muss exakt übereinstimmen.
