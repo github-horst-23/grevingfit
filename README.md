@@ -19,11 +19,11 @@ Es gibt keinen Build-Schritt. `index.html`, `app.js`, `styles.css`, `manifest.we
 
 ## Supabase-Cloud für vier Personen
 
-Die App enthält die URL und den Publishable Key des konfigurierten Supabase-Projekts. Jeder Benutzer erstellt ein eigenes Supabase-Konto mit E-Mail und Passwort und ordnet es genau einem verfügbaren Profilnamen zu. Die Datenbank bindet Trainingseinträge an die Supabase-User-ID und schützt sie per Row Level Security.
+Die App enthält die URL und den Publishable Key des konfigurierten Supabase-Projekts. Jeder Benutzer erstellt ein eigenes Supabase-Konto mit E-Mail und Passwort und wählt genau einen verfügbaren Profilnamen aus. Die Datenbank bindet Trainingseinträge an die Supabase-User-ID und schützt sie per Row Level Security.
 
 1. Im Supabase-Projekt unter **SQL Editor** den Inhalt von [`supabase-setup.sql`](supabase-setup.sql) ausführen. Das Skript legt die Datentabellen und RLS-Regeln an und kann erneut ausgeführt werden.
 2. Unter **Authentication → Providers** E-Mail-Anmeldung aktivieren. Unter **URL Configuration** die HTTPS-URL von GrevingFit als Site URL setzen.
-3. GrevingFit aufrufen, oben rechts auf das Wolkensymbol tippen, Konto erstellen und dabei genau ein Profil auswählen. Wenn E-Mail-Bestätigung eingeschaltet ist, erst die Mail bestätigen und danach anmelden.
+3. GrevingFit aufrufen, oben rechts auf das Wolkensymbol tippen, Konto erstellen, ein freies Profil auswählen und E-Mail sowie Passwort eingeben. Wenn E-Mail-Bestätigung eingeschaltet ist, erst die Mail bestätigen und danach anmelden.
 4. Auf weiteren Geräten dieselbe HTTPS-Adresse öffnen und mit dem Konto dieses Profils anmelden.
 
 Jede Person braucht eigene Zugangsdaten. Ein Profilname kann nur von einem Konto beansprucht werden. Die vier Konten teilen zwar dasselbe Supabase-Projekt, aber die RLS-Regeln erlauben jedem Konto nur den Zugriff auf seine eigene Datenzeile. Verwende niemals einen Supabase-Secret- oder Service-Role-Key im Frontend.
