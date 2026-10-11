@@ -68,7 +68,6 @@ body{background:radial-gradient(ellipse at 50% -15%,#dceaff 0,transparent 46%),v
 .chart-grid{stroke:#dce4ef}
 .chart-label{fill:#5b6b81}
 .toast{background:#1769e0;color:#fff}
-.export-btn{flex:0 0 auto;min-height:36px;padding:8px 11px;font-size:11px}
 .cloud-btn{flex:0 0 38px;font-size:18px}
 .cloud-btn.cloud-connected{background:#e7efff;color:#1456b5;border-color:#a9c7f2}
 
@@ -94,7 +93,7 @@ body{background:radial-gradient(ellipse at 50% -15%,#dceaff 0,transparent 46%),v
 .template-name-field[hidden]{display:none}
 .session-submit{margin-top:16px}
 .spotify-controls{display:flex;gap:8px;margin:12px 0}
-@media(max-width:650px){.app-shell{padding-left:16px;padding-right:16px;padding-bottom:20px}.topbar{gap:8px}.topbar .brand{gap:7px;font-size:19px}.menu-toggle{flex-basis:38px;width:38px;height:38px;padding:7px}.menu-panel{top:calc(64px + 8px);left:12px}.export-btn{padding:7px 8px;font-size:10px}.cloud-btn{flex-basis:38px;width:38px;height:38px}}
+@media(max-width:650px){.app-shell{padding-left:16px;padding-right:16px;padding-bottom:20px}.topbar{gap:8px}.topbar .brand{gap:7px;font-size:19px}.menu-toggle{flex-basis:38px;width:38px;height:38px;padding:7px}.menu-panel{top:calc(64px + 8px);left:12px}.cloud-btn{flex-basis:38px;width:38px;height:38px}}
 
 .spotify-brand{display:inline-flex;align-items:center;color:#0d8f50;font-size:13px;font-weight:800;letter-spacing:.02em}
 .spotify-now{display:flex;align-items:center;gap:14px;min-height:72px}
@@ -118,3 +117,22 @@ body{background:radial-gradient(ellipse at 50% -15%,#dceaff 0,transparent 46%),v
 .spotify-result-actions{display:flex;gap:6px}
 .spotify-connect-card code{font-size:11px;overflow-wrap:anywhere}
 @media(max-width:520px){.spotify-search-form{grid-template-columns:1fr}.spotify-search-form>.button{width:100%}.spotify-result{grid-template-columns:46px minmax(0,1fr) auto;gap:8px;padding:7px}.spotify-result>img{width:46px;height:46px}.spotify-result-actions{gap:4px}.spotify-result-actions .button{min-width:34px;padding:6px}.spotify-now>img{width:58px;height:58px}}
+
+.settings-account{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px 0 6px}
+.settings-account>div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.settings-account strong{font-size:14px;overflow-wrap:anywhere}
+.settings-actions{flex-wrap:wrap}
+.settings-password{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.settings-password h3{margin:0 0 12px;font-size:14px}
+#appMenu a[data-route="settings"]{border-top:1px solid var(--line);margin-top:5px;padding-top:13px}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#101827;--panel:#172337;--panel2:#21314a;--line:#344761;--muted:#a9b8cb;--text:#eef5ff;--lime:#3980f6;--lime-dark:#2468d4;--pink:#ef459b;--orange:#ef459b}
+:root[data-theme="dark"] body{background:radial-gradient(ellipse at 50% -15%,#1b2d48 0,transparent 48%),var(--bg)}
+:root[data-theme="dark"] .menu-panel{background:#172337;box-shadow:0 18px 48px rgba(0,0,0,.48)}
+:root[data-theme="dark"] .menu-panel a{color:#edf4ff}
+:root[data-theme="dark"] .menu-panel a.active,:root[data-theme="dark"] .menu-panel a:hover{background:#203a5d;color:#fff}
+:root[data-theme="dark"] .workout-banner{background:linear-gradient(120deg,#1b2d48,#172337);border-color:#304a6d}
+:root[data-theme="dark"] .workout-banner p{color:#b1c1d6}
+:root[data-theme="dark"] .modal{background:#172337}
+:root[data-theme="dark"] .modal::backdrop{background:rgba(3,9,18,.76)}
+:root[data-theme="dark"] .pill{background:#223b5d;color:#9fc3ff}
+:root[data-theme="dark"] .toast{background:#d9e8ff;color:#11203a}

@@ -35,12 +35,12 @@ Bei der ersten Anmeldung übernimmt GrevingFit lokale Daten, wenn noch kein ande
 Die Musikansicht enthält Spotify-Katalogsuche für Tracks und Playlists, einen GrevingFit-Player mit Cover, Fortschritt, Vor/Zurück und Suche sowie Spotify-Links zu den Originalinhalten. Der Player nutzt den Spotify Web Playback SDK; damit kann ein Spotify-Premiumkonto vollständige Titel im Browser wiedergeben. Spotify verlangt dafür Premium, ein Spotify-Developer-App-Client und die passende Redirect URI; der SDK streamt nicht mit einem beliebigen Embed-Link allein.
 
 1. Im [Spotify Developer Dashboard](https://developer.spotify.com/dashboard) eine App anlegen und **Web Playback SDK** aktivieren.
-2. Als Redirect URI exakt die von GrevingFit in **Musik** angezeigte HTTPS-Adresse eintragen (inklusive App-Pfad, ohne `#`-Route). Die URI muss exakt übereinstimmen.
+2. Als Redirect URI exakt die von GrevingFit in **Settings → Spotify** angezeigte HTTPS-Adresse eintragen (inklusive App-Pfad, ohne `#`-Route). Die URI muss exakt übereinstimmen.
 3. Wenn die Spotify-App im Entwicklungsmodus ist, die benötigten Spotify-Konten im Dashboard als Nutzer/Testnutzer freigeben.
-4. In GrevingFit unter **Musik** die Client ID eintragen und mit Spotify verbinden. Die Anmeldung verwendet Authorization Code mit PKCE; ein Client Secret wird nicht in die App geschrieben.
+4. In GrevingFit unter **Settings → Spotify** die Client ID eintragen und mit Spotify verbinden. Die Anmeldung verwendet Authorization Code mit PKCE; ein Client Secret wird nicht in die App geschrieben.
 
 Für jedes Familienprofil wird das eigene Spotify-Refresh-Token getrennt auf dem jeweiligen Gerät gespeichert. Spotify-Wiedergabe erfordert eine Internetverbindung und einen unterstützten Browser mit verschlüsselter Medienwiedergabe.
 
 ## Lokale Sicherung
 
-Über **Export** in der Kopfzeile lässt sich eine JSON-Datei mit Trainingsplan, Katalog, Verlauf und Einstellungen exportieren oder importieren. Die App führt weiterhin eine lokale Offline-Kopie.
+Unter **Settings → Daten auf diesem Gerät** lässt sich eine JSON-Datei mit Trainingsplan, Katalog, Verlauf und Einstellungen exportieren oder importieren. Die App führt weiterhin eine lokale Offline-Kopie.
