@@ -44,3 +44,4 @@ Für jedes Familienprofil wird das eigene Spotify-Refresh-Token getrennt auf dem
 ## Lokale Sicherung
 
 Unter **Settings → Daten auf diesem Gerät** lässt sich eine JSON-Datei mit Trainingsplan, Katalog, Verlauf und Einstellungen exportieren oder importieren. Die App führt weiterhin eine lokale Offline-Kopie.
+

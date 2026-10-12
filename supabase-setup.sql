@@ -52,3 +52,4 @@ create policy "Users can claim the profile matching their email"
       or (display_name = 'Mariette' and lower(coalesce(auth.jwt() ->> 'email', '')) = 'mariettegreving@gmail.com')
     )
   );
+
