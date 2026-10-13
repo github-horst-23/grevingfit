@@ -162,3 +162,10 @@ body{background:radial-gradient(ellipse at 50% -15%,#dceaff 0,transparent 46%),v
 @media(max-width:520px){.history-detail-body{padding-left:8px}.history-item{gap:9px}.history-date{width:38px}.history-desc span{display:block;margin-top:3px}.history-item>.pill{display:none}.session-exercise-head{align-items:flex-start}.free-exercise-tools .icon-action{padding:5px 6px}}
 
 .settings-password{margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}.settings-password summary{cursor:pointer;color:var(--text);font-weight:650;font-size:13px;list-style:none}.settings-password summary::-webkit-details-marker{display:none}.settings-password summary::after{content:"＋";float:right;color:var(--lime)}.settings-password[open] summary::after{content:"−"}.settings-password form{margin-top:14px}.settings-password h3{margin:0 0 12px;font-size:14px}
+
+/* Header action states */
+.sync-btn,.settings-btn{transition:background-color .15s ease,border-color .15s ease,color .15s ease,transform .12s ease}
+.sync-btn:active,.sync-btn.is-syncing,.settings-btn:active,.settings-btn.is-active{background:var(--pink);border-color:var(--pink);color:#fff}
+.sync-btn:active,.settings-btn:active{transform:scale(.95)}
+.sync-btn.is-syncing .sync-icon{animation:header-sync-spin .8s linear infinite}
+@keyframes header-sync-spin{to{transform:rotate(360deg)}}
