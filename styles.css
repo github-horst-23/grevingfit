@@ -160,3 +160,5 @@ body{background:radial-gradient(ellipse at 50% -15%,#dceaff 0,transparent 46%),v
 .free-exercise-tools .icon-action{padding:6px 8px}
 .free-exercise-remove{color:#e34e79}
 @media(max-width:520px){.history-detail-body{padding-left:8px}.history-item{gap:9px}.history-date{width:38px}.history-desc span{display:block;margin-top:3px}.history-item>.pill{display:none}.session-exercise-head{align-items:flex-start}.free-exercise-tools .icon-action{padding:5px 6px}}
+
+.settings-password{margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}.settings-password summary{cursor:pointer;color:var(--text);font-weight:650;font-size:13px;list-style:none}.settings-password summary::-webkit-details-marker{display:none}.settings-password summary::after{content:"＋";float:right;color:var(--lime)}.settings-password[open] summary::after{content:"−"}.settings-password form{margin-top:14px}.settings-password h3{margin:0 0 12px;font-size:14px}
