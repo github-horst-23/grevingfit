@@ -5,7 +5,6 @@
 /* Touch-first refinements for current Galaxy phones and similar narrow screens. */
 @media(max-width:650px){
   html{scroll-padding-top:72px}
-  body{touch-action:pan-x pan-y}
   .app-shell{padding-left:16px;padding-right:16px;padding-bottom:calc(88px + env(safe-area-inset-bottom))}
   .tabbar{box-sizing:border-box;height:calc(68px + env(safe-area-inset-bottom));padding:6px 5px env(safe-area-inset-bottom);}
   .tabbar a{gap:3px;min-height:52px;letter-spacing:-.15px}
@@ -169,3 +168,12 @@ body{background:radial-gradient(ellipse at 50% -15%,#dceaff 0,transparent 46%),v
 .sync-btn:active,.settings-btn:active{transform:scale(.95)}
 .sync-btn.is-syncing .sync-icon{animation:header-sync-spin .8s linear infinite}
 @keyframes header-sync-spin{to{transform:rotate(360deg)}}
+
+/* Mobile safe areas and reliable thumb targets */
+@media(max-width:650px){
+  .app-shell{padding-top:env(safe-area-inset-top);padding-bottom:calc(28px + env(safe-area-inset-bottom))}
+  .menu-toggle,.sync-btn,.settings-btn,#installBtn{flex-basis:42px;width:42px;height:42px}
+  .card,.metric,.history-item,.history-desc{min-width:0}
+  .history-detail-body{overflow-wrap:anywhere}
+  .spotify-search-form input{min-width:0}
+}
