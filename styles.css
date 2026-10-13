@@ -68,8 +68,8 @@ body{background:radial-gradient(ellipse at 50% -15%,#dceaff 0,transparent 46%),v
 .chart-grid{stroke:#dce4ef}
 .chart-label{fill:#5b6b81}
 .toast{background:#1769e0;color:#fff}
-.cloud-btn{flex:0 0 38px;font-size:18px}
-.cloud-btn.cloud-connected{background:#e7efff;color:#1456b5;border-color:#a9c7f2}
+.sync-btn,.settings-btn{flex:0 0 38px;width:38px;height:38px}
+.sync-btn.sync-connected{background:#e7efff;color:#1456b5;border-color:#a9c7f2}
 
 /* GrevingFit navigation and workout controls */
 .app-shell{padding-bottom:28px}
@@ -81,8 +81,8 @@ body{background:radial-gradient(ellipse at 50% -15%,#dceaff 0,transparent 46%),v
 .menu-panel a{display:flex;align-items:center;gap:12px;min-height:46px;padding:10px 12px;border-radius:11px;color:#23354e;text-decoration:none;font-weight:650;font-size:14px}
 .menu-panel a span{width:22px;text-align:center;color:#1769e0;font-size:19px}
 .menu-panel a.active,.menu-panel a:hover{background:#eaf1fc;color:#1456b5}
-.cloud-btn{position:relative;display:grid;place-items:center;border-radius:12px}
-.cloud-icon{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sync-btn,.settings-btn{position:relative;display:grid;place-items:center;border-radius:12px}
+.sync-icon,.settings-icon{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.settings-icon path{stroke-linejoin:round}
 .cloud-check{position:absolute;right:-5px;bottom:-4px;display:grid;place-items:center;width:17px;height:17px;border:2px solid #fff;border-radius:50%;background:#168449;color:#fff;font-size:10px;line-height:1}
 .cloud-check[hidden]{display:none}
 .template-card{padding:16px 0;border-top:1px solid var(--line)}
@@ -93,7 +93,7 @@ body{background:radial-gradient(ellipse at 50% -15%,#dceaff 0,transparent 46%),v
 .template-name-field[hidden]{display:none}
 .session-submit{margin-top:16px}
 .spotify-controls{display:flex;gap:8px;margin:12px 0}
-@media(max-width:650px){.app-shell{padding-left:16px;padding-right:16px;padding-bottom:20px}.topbar{gap:8px}.topbar .brand{gap:7px;font-size:19px}.menu-toggle{flex-basis:38px;width:38px;height:38px;padding:7px}.menu-panel{top:calc(64px + 8px);left:12px}.cloud-btn{flex-basis:38px;width:38px;height:38px}}
+@media(max-width:650px){.app-shell{padding-left:16px;padding-right:16px;padding-bottom:20px}.topbar{gap:8px}.topbar .brand{gap:7px;font-size:19px}.menu-toggle{flex-basis:38px;width:38px;height:38px;padding:7px}.menu-panel{top:calc(64px + 8px);left:12px}.sync-btn,.settings-btn{flex-basis:38px;width:38px;height:38px}}
 
 .spotify-brand{display:inline-flex;align-items:center;color:#0d8f50;font-size:13px;font-weight:800;letter-spacing:.02em}
 .spotify-now{display:flex;align-items:center;gap:14px;min-height:72px}
