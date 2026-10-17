@@ -47,13 +47,18 @@
       window.addEventListener('load', async () => {
         try {
           const registration = await navigator.serviceWorker.register('./service-worker.js', { updateViaCache: 'none' });
+          let offeredWorker = null;
+          const offerUpdate = worker => {
+            if (!worker || !navigator.serviceWorker.controller || offeredWorker === worker) return;
+            offeredWorker = worker;
+            if (confirm('Eine neue Version der App ist verfügbar. Jetzt aktualisieren?')) worker.postMessage('skipWaiting');
+          };
+          offerUpdate(registration.waiting);
           registration.addEventListener('updatefound', () => {
             const worker = registration.installing;
             if (!worker) return;
             worker.addEventListener('statechange', () => {
-              if (worker.state === 'installed' && navigator.serviceWorker.controller && confirm('Eine neue Version der App ist verfügbar. Jetzt aktualisieren?')) {
-                worker.postMessage('skipWaiting');
-              }
+              if (worker.state === 'installed') offerUpdate(worker);
             });
           });
           registration.update().catch(() => {});
