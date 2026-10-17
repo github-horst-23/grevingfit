@@ -4,7 +4,7 @@
 **Alle Funktionen für Smartphone und Webbrowser**
 
 Für Carsten, Kathrin, Mathilda und Mariette.
-Stand: 17. Oktober 2026. Beschreibt den App-Stand mit Cache-Version v30.
+Stand: 17. Oktober 2026. Beschreibt den App-Stand mit Cache-Version v34.
 
 GrevingFit verwaltet deine Trainingsvorlagen, deinen Übungskatalog und deine abgeschlossenen Einheiten. Du kannst spontan trainieren, Gewichte, Wiederholungen oder Sekunden erfassen, ein Training unterbrechen und deine Entwicklung auswerten. Optional gleichen sich abgeschlossene Trainings und Planungen über dein persönliches Konto mit anderen Geräten ab.
 
@@ -77,7 +77,9 @@ Auf dem iPhone öffnest du die App in Safari, verwendest das Teilen-Menü und w�
 | Kleiner grüner Haken am Sync-Knopf | Ein Cloud-Konto ist angemeldet. Das ist keine Bestätigung, dass gerade Internet besteht oder jede Änderung bereits übertragen wurde. |
 | Zahnrad rechts | Öffnet **Settings**. Der aktive Settings-Knopf erscheint pink. |
 
-Das Hauptmenü enthält **Heute**, **Einheiten & Vorlagen**, **Übungskatalog**, **Musik**, **Verlauf**, **Auswertung** und **Settings**.
+Das Hauptmenü enthält in dieser Reihenfolge **Heute**, **Einheiten & Vorlagen**, **Übungskatalog**, **Verlauf**, **Auswertung**, **Musik** und **Settings**. **Musik** steht direkt unter **Auswertung**.
+
+Die Symbole helfen bei der Orientierung: **Einheiten & Vorlagen** nutzt eine einfache Liste, **Übungskatalog** ein Buch, **Verlauf** eine ansteigende Linie und **Auswertung** eine Lupe. **Musik** ist am blauen Spotify-Logo erkennbar. **Settings** verwendet ein Zahnrad im gleichen Linienstil wie die übrigen Menü-Symbole.
 
 ### Die Startseite
 
@@ -301,7 +303,9 @@ Die **Auswertung** wird aus abgeschlossenen Verlaufseinträgen berechnet. Ein of
 
 ### Wochenvolumen
 
-Das Balkendiagramm **Trainingsvolumen** zeigt die aktuelle Kalenderwoche und die sieben vorherigen Wochen. Die Beschriftung „k“ bedeutet Tausend: **2,5k** entspricht **2.500 kg Volumen**. Ein höherer Balken kann durch mehr Gewicht, mehr Wiederholungen oder mehr Sätze entstehen.
+Das Balkendiagramm **Trainingsvolumen** zeigt die aktuelle Kalenderwoche und die sieben vorherigen Wochen. Die Beschriftung „k“ bedeutet Tausend: **2,5k** entspricht **2.500 kg Volumen**. Werte unter 1.000 kg werden ohne „k“ angezeigt. Ein höherer Balken kann durch mehr Gewicht, mehr Wiederholungen oder mehr Sätze entstehen.
+
+Auf dem Smartphone passen die Diagramme vollständig in ihre Karten. Die Wochen werden dort kompakt als Datum dargestellt, zum Beispiel **12.10.**; dieser Wert bezeichnet den Wochenbeginn. Die Zahlen über den gefüllten Balken zeigen das Volumen.
 
 ### Fortschritt pro Übung
 
@@ -458,7 +462,7 @@ Vor dem Training: richtiges Profil kontrollieren und synchronisieren. Währendde
 
 ### Offizielle Hilfen und Gültigkeit
 
-Die App-Bedienung wurde mit dem lokalen GrevingFit-Code (Stand v30) abgeglichen. Externe Browsermenüs und Spotify-Zugangsbedingungen können sich ändern. Geprüfte Hilfen vom 17. Oktober 2026:
+Die App-Bedienung wurde mit dem lokalen GrevingFit-Code (Stand v34) abgeglichen. Externe Browsermenüs und Spotify-Zugangsbedingungen können sich ändern. Geprüfte Hilfen vom 17. Oktober 2026:
 
 [1] [Google: Web-Apps auf Android installieren](https://support.google.com/chrome/answer/9658361?co=GENIE.Platform%3DAndroid&hl=de)
 
