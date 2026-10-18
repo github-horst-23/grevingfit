@@ -251,3 +251,6 @@ body{background:radial-gradient(ellipse at 50% -15%,#dceaff 0,transparent 46%),v
 @media(max-width:650px){.progress-chart-wrap,.volume-chart-wrap{width:100%;height:220px;min-height:0;aspect-ratio:auto}.stats-section .chart-label{font-size:11px}}
 
 .menu-panel a .spotify-icon{fill:#1769e0;stroke:none}
+
+/* Exercise completion applies only to the current template session. */
+.session-set-fields{border:0;padding:0;margin:0;min-width:0}.session-set-fields[hidden]{display:none}.exercise-status-actions{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.exercise-status-actions .button{min-height:44px}.exercise-status-actions [aria-pressed="true"]{background:var(--blue,#1769e0);color:#fff;border-color:var(--blue,#1769e0)}.session-exercise[data-status="completed"]{border:2px solid var(--blue,#1769e0)}.session-exercise[data-status="skipped"]{border:2px dashed var(--muted)}.exercise-status-label{display:inline-block;color:var(--blue,#1769e0);font-weight:700;font-size:12px;margin:0 0 10px}.session-set-fields input[readonly]{opacity:.75}@media(max-width:520px){.exercise-status-actions{display:grid;grid-template-columns:1fr 1fr}.exercise-status-actions .button{padding:10px 8px;white-space:normal;line-height:1.35}}

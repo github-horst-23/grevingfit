@@ -45,3 +45,7 @@ Für jedes Familienprofil wird das eigene Spotify-Refresh-Token getrennt auf dem
 
 Unter **Settings → Daten auf diesem Gerät** lässt sich eine JSON-Datei mit Trainingsplan, Katalog, Verlauf und Einstellungen exportieren oder importieren. Die App führt weiterhin eine lokale Offline-Kopie.
 
+
+### Übungen im Vorlagen-Training abschließen
+
+Jede Übung kann als „Fertig“ oder „Heute auslassen“ markiert werden. Über denselben Knopf lässt sich die Auswahl zurücknehmen; eingegebene Werte bleiben erhalten. Vor dem Speichern muss für jede Übung eine Auswahl getroffen sein. Der Zwischenstand wird mit dem Training lokal gespeichert. Im Verlauf sind beide Zustände sichtbar. Ausgelassene Übungen zählen nicht zu Satzanzahl, Volumen oder Übungsfortschritt und ersetzen keine bisherigen Katalogwerte. Eine aus dem Verlauf erstellte Vorlage übernimmt nur durchgeführte Übungen. Die ursprüngliche Trainingsvorlage bleibt unverändert.
