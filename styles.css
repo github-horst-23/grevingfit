@@ -244,6 +244,10 @@ body{background:radial-gradient(ellipse at 50% -15%,#dceaff 0,transparent 46%),v
  .topbar:has(#installBtn:not([hidden])){height:auto;min-height:64px;flex-wrap:wrap;padding:10px 0}
  .exercise-info strong,.exercise-info span,.history-desc{overflow-wrap:anywhere}
 }
+@media(max-width:650px){
+ .stats-grid .metric-label{min-height:2.4em}
+ .stats-grid .metric-value{white-space:nowrap}
+}
 @media(max-width:380px){.topbar{gap:4px}.brand-name{font-size:17px}.topbar .brand{gap:3px}.session-exercise{padding:12px}.set-row{grid-template-columns:22px repeat(3,minmax(0,1fr));gap:4px}}
 
 .set-row-head{margin-top:12px;margin-bottom:4px;text-align:center}.set-row-head span{font-size:11px;font-weight:600}.set-row-head span:first-child{text-align:left}
