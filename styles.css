@@ -91,31 +91,8 @@ body{background:radial-gradient(ellipse at 50% -15%,#dceaff 0,transparent 46%),v
 .save-template-option input{width:20px;height:20px;accent-color:#1769e0}
 .template-name-field[hidden]{display:none}
 .session-submit{margin-top:16px}
-.spotify-controls{display:flex;gap:8px;margin:12px 0}
 @media(max-width:650px){.app-shell{padding-left:16px;padding-right:16px;padding-bottom:20px}.topbar{gap:8px}.topbar .brand{gap:7px;font-size:19px}.menu-toggle{flex-basis:38px;width:38px;height:38px;padding:7px}.menu-panel{top:calc(64px + 8px);left:12px}.sync-btn,.settings-btn{flex-basis:38px;width:38px;height:38px}}
 
-.spotify-brand{display:inline-flex;align-items:center;color:#0d8f50;font-size:13px;font-weight:800;letter-spacing:.02em}
-.spotify-now{display:flex;align-items:center;gap:14px;min-height:72px}
-.spotify-now>img{width:68px;height:68px;object-fit:cover;border-radius:10px;background:var(--surface-2)}
-.spotify-now-info{display:flex;flex-direction:column;gap:5px;min-width:0}
-.spotify-now-info a{color:var(--text);text-decoration:none}
-.spotify-now-info strong{font-size:17px}
-.spotify-now-info span{color:var(--muted);font-size:13px;overflow-wrap:anywhere}
-.spotify-timeline{display:grid;grid-template-columns:38px 1fr 38px;align-items:center;gap:8px;margin-top:12px;color:var(--muted);font-size:11px}
-.spotify-timeline input{width:100%;accent-color:#16884a}
-.spotify-controls{display:flex;align-items:center;justify-content:center;gap:12px;margin:14px 0 0}
-.spotify-play{width:46px;height:46px;border-radius:50%;font-size:18px}
-.spotify-search-form{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:end}
-.spotify-search-form .field{margin:0}
-.spotify-results{display:grid;gap:8px;margin-top:12px}
-.spotify-result{display:grid;grid-template-columns:54px minmax(0,1fr) auto;align-items:center;gap:12px;padding:9px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
-.spotify-result>img{width:54px;height:54px;object-fit:cover;border-radius:8px;background:var(--surface-2)}
-.spotify-result-info{display:flex;flex-direction:column;gap:3px;min-width:0}
-.spotify-result-info a{color:var(--text);text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.spotify-result-info span,.spotify-result-info small{color:var(--muted);font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.spotify-result-actions{display:flex;gap:6px}
-.spotify-connect-card code{font-size:11px;overflow-wrap:anywhere}
-@media(max-width:520px){.spotify-search-form{grid-template-columns:1fr}.spotify-search-form>.button{width:100%}.spotify-result{grid-template-columns:46px minmax(0,1fr) auto;gap:8px;padding:7px}.spotify-result>img{width:46px;height:46px}.spotify-result-actions{gap:4px}.spotify-result-actions .button{min-width:34px;padding:6px}.spotify-now>img{width:58px;height:58px}}
 
 .settings-account{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px 0 6px}
 .settings-account>div{display:flex;flex-direction:column;gap:4px;min-width:0}
@@ -175,7 +152,6 @@ body{background:radial-gradient(ellipse at 50% -15%,#dceaff 0,transparent 46%),v
   .menu-toggle,.sync-btn,.settings-btn,#installBtn{flex-basis:42px;width:42px;height:42px}
   .card,.metric,.history-item,.history-desc{min-width:0}
   .history-detail-body{overflow-wrap:anywhere}
-  .spotify-search-form input{min-width:0}
 }
 
 .saved-session-draft{border-color:#c7d8fa;background:linear-gradient(120deg,#edf4ff,#fff)}.draft-summary{display:flex;align-items:center;justify-content:space-between;gap:14px}.draft-summary>div:first-child{display:grid;gap:5px}.draft-summary strong{font-size:16px}.draft-summary span{font-size:12px;color:var(--muted)}.history-actions{justify-content:flex-end;margin-top:14px}.session-submit{flex-wrap:wrap}.session-submit .button{flex:1}
@@ -254,7 +230,17 @@ body{background:radial-gradient(ellipse at 50% -15%,#dceaff 0,transparent 46%),v
 
 @media(max-width:650px){.progress-chart-wrap,.volume-chart-wrap{width:100%;height:220px;min-height:0;aspect-ratio:auto}.stats-section .chart-label{font-size:11px}}
 
-.menu-panel a .spotify-icon{fill:#1769e0;stroke:none}
 
 /* Exercise completion applies only to the current template session. */
 .session-set-fields{border:0;padding:0;margin:0;min-width:0}.session-set-fields[hidden]{display:none}.exercise-status-actions{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.exercise-status-actions .button{min-height:44px}.exercise-status-actions [aria-pressed="true"]{background:var(--blue,#1769e0);color:#fff;border-color:var(--blue,#1769e0)}.session-exercise[data-status="completed"]{border:2px solid var(--blue,#1769e0)}.session-exercise[data-status="skipped"]{border:2px dashed var(--muted)}.exercise-status-label{display:inline-block;color:var(--blue,#1769e0);font-weight:700;font-size:12px;margin:0 0 10px}.session-set-fields input[readonly]{opacity:.75}@media(max-width:520px){.exercise-status-actions{display:grid;grid-template-columns:1fr 1fr}.exercise-status-actions .button{padding:10px 8px;white-space:normal;line-height:1.35}}
+
+/* Satzabschluss im laufenden Training */
+.session-exercise .set-row{grid-template-columns:repeat(3,minmax(0,1fr)) 44px}
+.session-exercise .set-row-head span:first-child{text-align:center}
+.set-check{position:relative;display:grid;place-items:center;min-width:44px;min-height:44px;cursor:pointer}
+.set-check input{position:absolute!important;width:1px!important;height:1px!important;min-height:0!important;padding:0!important;opacity:0;pointer-events:none}
+.set-check span{display:grid;place-items:center;width:28px;height:28px;border:2px solid var(--line);border-radius:9px;background:var(--panel2);color:transparent;font-size:17px;font-weight:800;transition:.15s}
+.set-check input:checked+span{border-color:var(--blue,#1769e0);background:var(--blue,#1769e0);color:#fff}
+.set-check input:focus-visible+span{outline:3px solid color-mix(in srgb,var(--blue,#1769e0) 30%,transparent);outline-offset:2px}
+.session-exercise[data-status="completed"] .set-check span{border-color:var(--blue,#1769e0)}
+@media(max-width:520px){.session-exercise .set-row{grid-template-columns:repeat(3,minmax(0,1fr)) 38px;gap:4px}.set-check{min-width:38px}.set-check span{width:27px;height:27px}}
