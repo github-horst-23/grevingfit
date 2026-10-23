@@ -253,4 +253,15 @@ body{background:radial-gradient(ellipse at 50% -15%,#dceaff 0,transparent 46%),v
  .menu-panel{top:auto;left:12px;bottom:calc(82px + env(safe-area-inset-bottom));width:calc(100vw - 24px);max-height:calc(100dvh - 118px - env(safe-area-inset-bottom));grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;padding:10px;border-radius:22px;box-shadow:0 -14px 44px rgba(25,55,100,.22)}
  .menu-panel:not([hidden]){display:grid}
  .menu-panel a{min-width:0;min-height:52px;padding:10px;font-size:13px}
+ .menu-panel:not([hidden]){transform-origin:calc(100% - 22px) 100%;animation:menu-sheet-in .24s cubic-bezier(.2,.8,.2,1) both}
+ .menu-panel:not([hidden]) a{opacity:0;animation:menu-item-in .2s ease-out both}
+ .menu-panel:not([hidden]) a:nth-child(1),.menu-panel:not([hidden]) a:nth-child(2){animation-delay:.05s}
+ .menu-panel:not([hidden]) a:nth-child(3),.menu-panel:not([hidden]) a:nth-child(4){animation-delay:.08s}
+ .menu-panel:not([hidden]) a:nth-child(5),.menu-panel:not([hidden]) a:nth-child(6){animation-delay:.11s}
 }
+@keyframes menu-sheet-in{from{opacity:0;transform:translateY(18px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes menu-item-in{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.menu-panel:not([hidden]),.menu-panel:not([hidden]) a{animation:none}}
+.page.page-transition-in{animation:page-transition-in .6s cubic-bezier(.2,.75,.25,1) both}
+@keyframes page-transition-in{from{opacity:.35;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.page.page-transition-in{animation:none}}
