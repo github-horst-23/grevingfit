@@ -244,3 +244,13 @@ body{background:radial-gradient(ellipse at 50% -15%,#dceaff 0,transparent 46%),v
 .set-check input:focus-visible+span{outline:3px solid color-mix(in srgb,var(--blue,#1769e0) 30%,transparent);outline-offset:2px}
 .session-exercise[data-status="completed"] .set-check span{border-color:var(--blue,#1769e0)}
 @media(max-width:520px){.session-exercise .set-row{grid-template-columns:repeat(3,minmax(0,1fr)) 38px;gap:4px}.set-check{min-width:38px}.set-check span{width:27px;height:27px}}
+
+/* Smartphone-Vorschlag: daumennahes Menü als unteres Menüblatt */
+@media(max-width:650px){
+ .app-shell{padding-bottom:calc(104px + env(safe-area-inset-bottom))}
+ .menu-toggle{position:fixed;z-index:32;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));width:54px;height:54px;flex-basis:54px;border:0;border-radius:50%;background:var(--blue,#1769e0);color:#fff;box-shadow:0 10px 28px rgba(23,105,224,.34)}
+ .menu-toggle[aria-expanded="true"]{background:var(--pink,#df006f)}
+ .menu-panel{top:auto;left:12px;bottom:calc(82px + env(safe-area-inset-bottom));width:calc(100vw - 24px);max-height:calc(100dvh - 118px - env(safe-area-inset-bottom));grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;padding:10px;border-radius:22px;box-shadow:0 -14px 44px rgba(25,55,100,.22)}
+ .menu-panel:not([hidden]){display:grid}
+ .menu-panel a{min-width:0;min-height:52px;padding:10px;font-size:13px}
+}
