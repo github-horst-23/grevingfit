@@ -1,6 +1,6 @@
 # GrevingFit
 
-GrevingFit ist eine installierbare PWA für die Trainingsprofile Carsten, Kathrin, Mathilda und Mariette. Appsymbol und blau-pinkes Farbschema bleiben erhalten.
+GrevingFit ist eine installierbare PWA für die Trainingsprofile Carsten, Kathrin, Mathilda und Mariette. Jedes Profil kann ein eigenes vollständiges Farbschema verwenden.
 
 ## Start und Installation
 
@@ -33,6 +33,10 @@ Bei der ersten Anmeldung übernimmt GrevingFit lokale Daten, wenn noch kein ande
 ## Lokale Sicherung
 
 Unter **Settings → Daten auf diesem Gerät** lässt sich eine JSON-Datei mit Trainingsplan, Katalog, Verlauf und Einstellungen exportieren oder importieren. Die App führt weiterhin eine lokale Offline-Kopie.
+
+## Profilgebundene Personalisierung
+
+Unter **Settings → Personalisierung** lassen sich Startbereich, vollständiges Farbschema, Schriftgröße, Darstellungsdichte sowie helles oder dunkles Design einstellen. Die Farbschemata stimmen Hauptfarbe, Akzentfarbe, Hintergründe und Flächen aufeinander ab. Bei einem angemeldeten Familienprofil werden diese Einstellungen zusammen mit dessen Trainingsdaten in der Cloud gespeichert und auf weiteren Geräten übernommen. Das Gastprofil verwendet davon getrennte lokale Einstellungen.
 
 
 ### Übungen und Sätze im Training abschließen
