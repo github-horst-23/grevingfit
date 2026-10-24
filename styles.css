@@ -262,6 +262,6 @@ body{background:radial-gradient(ellipse at 50% -15%,#dceaff 0,transparent 46%),v
 @keyframes menu-sheet-in{from{opacity:0;transform:translateY(18px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes menu-item-in{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){.menu-panel:not([hidden]),.menu-panel:not([hidden]) a{animation:none}}
-.page.page-transition-in{animation:page-transition-in .6s cubic-bezier(.2,.75,.25,1) both}
+.page.page-transition-in{animation:page-transition-in .24s cubic-bezier(.2,.75,.25,1) both}
 @keyframes page-transition-in{from{opacity:.35;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){.page.page-transition-in{animation:none}}
