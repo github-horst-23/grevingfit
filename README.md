@@ -13,7 +13,11 @@ Es gibt keinen Build-Schritt. `index.html`, `app.js`, `styles.css`, `manifest.we
 - Wochenplanung entfernt: Einheiten werden am tatsächlichen Speichertag datiert.
 - Gespeicherte Vorlagen können wiederverwendet werden.
 - Freie Trainings lassen sich spontan aus Katalogübungen zusammenstellen, protokollieren und optional als Vorlage sichern.
+- Im laufenden Training können Übungen umsortiert und Vorschläge aus den letzten Satzwerten übernommen werden.
+- Nach dem Speichern zeigt GrevingFit eine Trainingszusammenfassung mit Dauer, Volumen und neuen Bestleistungen.
 - Historie, Gewichte, Wiederholungen, Notizen und Auswertungen bleiben enthalten.
+- Die Auswertung enthält einen Monatskalender und persönliche Bestleistungen je Übung.
+- Löschaktionen für Einheiten, Vorlagen und Übungen können unmittelbar rückgängig gemacht werden.
 - Der Übungskatalog verwendet ausschließlich Beine, Rumpf, Rücken, Brust, Arme, Schultern und Sonstige. Eine Satzpause wird nicht mehr verwaltet.
 - Hamburger-Menü oben links öffnet die Navigation.
 
