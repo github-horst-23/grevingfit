@@ -321,3 +321,9 @@ body{background:radial-gradient(ellipse at 50% -15%,#dceaff 0,transparent 46%),v
 
 @media(max-width:650px){.free-exercise-tools{flex-wrap:wrap;justify-content:flex-end}.training-suggestion{align-items:flex-start}.pr-grid{grid-template-columns:1fr}.calendar-head{align-items:flex-start!important;flex-direction:column}.calendar-day{min-height:42px}.summary-records>div{align-items:flex-start}.toast:has(.toast-undo){max-width:calc(100vw - 28px)}}
 @media(max-width:380px){.calendar-grid{gap:3px}.calendar-day{min-height:38px;border-radius:9px}.calendar-day i{right:2px;bottom:2px}}
+
+/* Zusammenführen von Trainingseinheiten im Verlauf. */
+.history-merge-suggestion{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
+.history-merge-suggestion>div{min-width:0;overflow-wrap:anywhere}.history-merge-suggestion p{margin:5px 0 0}.history-merge-suggestion .button{flex-shrink:0}
+.merge-session-options{border:0;padding:0;margin:16px 0}.merge-session-options legend{font-weight:700;margin-bottom:8px}.merge-session-option{display:flex;align-items:center;gap:12px;min-height:52px;padding:10px 4px;border-bottom:1px solid var(--line);cursor:pointer}.merge-session-option input{width:22px;height:22px;flex:0 0 22px;accent-color:var(--blue)}.merge-session-option span{display:grid;gap:4px;min-width:0;overflow-wrap:anywhere}.merge-session-option small{color:var(--muted)}
+@media(max-width:600px){.history-merge-suggestion{align-items:stretch;flex-direction:column}.history-merge-suggestion .button{width:100%;min-height:44px}}
