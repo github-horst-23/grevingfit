@@ -374,3 +374,25 @@ body{background:radial-gradient(ellipse at 50% -15%,#dceaff 0,transparent 46%),v
 @media(prefers-reduced-motion:reduce){.menu-panel:not([hidden]),.menu-panel:not([hidden]) a .menu-link-inner{animation:none}}
 
 :root[data-scheme] .menu-panel a .menu-link-inner{color:inherit}
+
+/* Touch-Bedienung und Eingabe auf Android-Smartphones, auch im Querformat. */
+.form-grid{align-items:end}
+@media(pointer:coarse){
+ .icon-action,.icon-button,.brand-mark,.menu-toggle{min-width:44px;min-height:44px;width:44px;height:44px}.button,.button.small,.filter-chip,.training-suggestion .button{min-height:44px}
+ .field input,.field select,.field textarea,.set-row input,.stats-select-label select{font-size:16px;min-height:44px}
+ .session-exercise .set-row{grid-template-columns:repeat(3,minmax(0,1fr)) 44px;gap:4px}.session-exercise .set-check{min-width:44px;min-height:44px}
+ .save-template-option{min-height:44px}html[data-keyboard-open="true"] .menu-toggle{visibility:hidden;pointer-events:none}
+}
+
+/* Kontrastreiche Beschriftung bei den leuchtenden Farbschemata. */
+:root[data-scheme="energy"]{--control-accent:#DF006B}
+:root[data-theme="dark"][data-scheme="energy"]{--control-primary:#1769E0}
+:root[data-scheme="lavender"]{--control-accent:#D43E2D}
+:root[data-scheme="lagoon"]{--control-primary:#007C80;--control-accent:#D52B48}
+:root[data-scheme="apricot"]{--control-accent:#C74B13}
+:root[data-scheme] .button:not(.secondary):not(.danger){background:var(--control-primary,var(--blue))}
+:root[data-scheme] .button:not(.secondary):not(.danger):hover{background:var(--lime-dark)}
+:root[data-scheme] .button.secondary,:root[data-scheme] .button.danger{background:var(--control-accent,var(--pink));border-color:var(--control-accent,var(--pink))}
+:root[data-scheme] .button.secondary:hover,:root[data-scheme] .button.danger:hover{background:color-mix(in srgb,var(--control-accent,var(--pink)) 84%,#000)}
+:root[data-scheme] .brand-mark,:root[data-scheme] .summary-celebration,:root[data-scheme] .set-check input:checked+span,:root[data-scheme] .filter-chip.active,:root[data-scheme] .toast{background:var(--control-primary,var(--blue))}
+@media(max-width:650px){:root[data-scheme] .menu-toggle{background:var(--control-primary,var(--blue))}:root[data-scheme] .menu-toggle[aria-expanded="true"]{background:var(--control-accent,var(--pink))}}

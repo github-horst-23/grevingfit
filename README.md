@@ -18,8 +18,8 @@ Es gibt keinen Build-Schritt. `index.html`, `app.js`, `styles.css`, `manifest.we
 - Historie, Gewichte, Wiederholungen, Notizen und Auswertungen bleiben enthalten.
 - Die Auswertung enthält einen Monatskalender und persönliche Bestleistungen je Übung.
 - Löschaktionen für Einheiten, Vorlagen und Übungen können unmittelbar rückgängig gemacht werden.
-- Der Übungskatalog verwendet ausschließlich Beine, Rumpf, Rücken, Brust, Arme, Schultern und Sonstige. Eine Satzpause wird nicht mehr verwaltet.
-- Hamburger-Menü oben links öffnet die Navigation.
+- Der Übungskatalog verwendet ausschließlich Beine, Rumpf, Rücken, Brust, Arme, Schultern, Cardio und Sonstige. Eine Satzpause wird nicht mehr verwaltet.
+- Das Menü öffnet auf Smartphones unten rechts; auf größeren Bildschirmen befindet es sich oben links.
 
 ## Supabase-Cloud für vier Personen
 
@@ -27,7 +27,7 @@ Die App enthält die URL und den Publishable Key des konfigurierten Supabase-Pro
 
 1. Im Supabase-Projekt unter **SQL Editor** den Inhalt von [`supabase-setup.sql`](supabase-setup.sql) ausführen. Das Skript legt Datentabellen und RLS-Regeln an, einschließlich der Profil-/E-Mail-Zuordnung. Führe es nach Regeländerungen erneut aus; es kann wiederholt werden.
 2. Unter **Authentication → Providers** E-Mail-Anmeldung aktivieren. Unter **URL Configuration** die HTTPS-URL von GrevingFit als Site URL setzen.
-3. GrevingFit aufrufen, oben rechts auf das Wolkensymbol tippen, Konto erstellen, das zur E-Mail passende Profil auswählen und E-Mail sowie Passwort eingeben. Abweichende Zuordnungen werden abgelehnt. Wenn E-Mail-Bestätigung eingeschaltet ist, erst die Mail bestätigen und danach anmelden.
+3. GrevingFit aufrufen, oben rechts auf das Synchronisierungssymbol tippen, Konto erstellen, das zur E-Mail passende Profil auswählen und E-Mail sowie Passwort eingeben. Abweichende Zuordnungen werden abgelehnt. Wenn E-Mail-Bestätigung eingeschaltet ist, erst die Mail bestätigen und danach anmelden.
 4. Auf weiteren Geräten dieselbe HTTPS-Adresse öffnen und mit dem Konto dieses Profils anmelden.
 
 Jede Person braucht eigene Zugangsdaten. Ein Profilname kann nur von einem Konto beansprucht werden. Die vier Konten teilen zwar dasselbe Supabase-Projekt, aber die RLS-Regeln erlauben jedem Konto nur den Zugriff auf seine eigene Datenzeile. Verwende niemals einen Supabase-Secret- oder Service-Role-Key im Frontend.
@@ -45,4 +45,4 @@ Unter **Settings → Personalisierung** lassen sich Startbereich, vollständiges
 
 ### Übungen und Sätze im Training abschließen
 
-In Vorlagen- und spontanen Trainings kann jeder Satz einzeln abgehakt werden. Sind alle Sätze abgehakt, gilt die Übung automatisch als fertig. Wird ein Haken entfernt, ist die Übung wieder offen. Mit „Fertig“ werden alle vollständig ausgefüllten Sätze gemeinsam abgeschlossen; „Heute auslassen“ protokolliert die Übung als nicht durchgeführt. Der Zwischenstand wird lokal gespeichert. Ausgelassene Übungen zählen nicht zu Satzanzahl, Volumen oder Übungsfortschritt und ersetzen keine bisherigen Katalogwerte. Eine aus dem Verlauf erstellte Vorlage übernimmt nur durchgeführte Übungen.
+In Vorlagen- und spontanen Trainings kann jeder Satz einzeln abgehakt werden. Sind alle Sätze abgehakt, gilt die Übung automatisch als fertig. Wird ein Haken entfernt, ist die Übung wieder offen. Mit „Fertig“ wird eine Übung auch unvollständig geschlossen, ohne weitere Sätze abzuhaken; nur abgehakte Sätze werden gewertet; „Heute auslassen“ protokolliert die Übung als nicht durchgeführt. Der Zwischenstand wird lokal gespeichert. Ausgelassene Übungen zählen nicht zu Satzanzahl, Volumen oder Übungsfortschritt und ersetzen keine bisherigen Katalogwerte. Eine aus dem Verlauf erstellte Vorlage übernimmt nur durchgeführte Übungen.
