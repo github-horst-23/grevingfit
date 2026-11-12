@@ -16,7 +16,7 @@ Es gibt keinen Build-Schritt. `index.html`, `app.js`, `styles.css`, `manifest.we
 - Im laufenden Training können Übungen umsortiert und Vorschläge aus den letzten Satzwerten übernommen werden.
 - Nach dem Speichern zeigt GrevingFit eine Trainingszusammenfassung mit Dauer, Volumen und neuen Bestleistungen.
 - Historie, Gewichte, Wiederholungen, Notizen und Auswertungen bleiben enthalten.
-- Die Auswertung enthält einen Monatskalender und persönliche Bestleistungen je Übung.
+- Die Auswertung enthält einen Monatskalender, persönliche Bestleistungen je Übung und Fortschrittskurven je Muskelgruppe. Diese zeigen die mittlere prozentuale Veränderung vergleichbarer Übungen im gewählten Zeitraum (8 Wochen, 6 Monate oder Gesamt). Einzelheiten der Berechnung und Übungswerte lassen sich aufklappen.
 - Löschaktionen für Einheiten, Vorlagen und Übungen können unmittelbar rückgängig gemacht werden.
 - Der Übungskatalog verwendet ausschließlich Beine, Rumpf, Rücken, Brust, Arme, Schultern, Cardio und Sonstige. Eine Satzpause wird nicht mehr verwaltet.
 - Das Menü öffnet auf Smartphones unten rechts; auf größeren Bildschirmen befindet es sich oben links.
