@@ -56,3 +56,9 @@ Jedes Familienkonto hat einen eigenen Übungskatalog, lokal und in seiner Cloud-
 ### Eigenständige App-Installation
 
 Die stabile Manifest-ID lautet `/grevingfit/`. GrevingFit verwendet `/grevingfit/`, Greving.Shop `/grevingshop/`; beide Apps werden dadurch getrennt erkannt. Die IDs bleiben bei künftigen Updates unverändert. Startadresse und Gültigkeitsbereich bleiben relativ zum jeweiligen App-Verzeichnis (`./`). Die aktualisierten Dateien müssen zuerst auf der jeweiligen App-Webadresse veröffentlicht werden. Bei einer bisherigen Installation ohne diese ID kann eine erneute Installation erforderlich sein; vorher die Daten sichern.
+
+## Gemeinsames Konto und Passwort ändern
+
+GrevingFit und GrevingShop nutzen dasselbe Supabase-Auth-Projekt und damit dieselben Konten. Angemeldet unter **Settings → Passwort ändern** das Formular öffnen. Alternativ in der Cloud-Kontoverwaltung **Passwort ändern** wählen. Aktuelles Passwort, neues Passwort (mindestens 8 Zeichen) und Wiederholung eingeben. Nach dem Speichern gilt das neue Passwort für beide Apps. Passwörter werden nicht in App-Daten oder im ZIP gespeichert.
+
+Auf ausdrücklichen Wunsch ist die E-Mail-Bestätigung im gemeinsamen Projekt ausgeschaltet. Neue Registrierungen benötigen dadurch keine Bestätigungsmail. Die Datenfreigaben bleiben bestehen, prüfen aber die E-Mail-Adresse ohne Besitznachweis. Noch nicht registrierte freigegebene Adressen können deshalb von Dritten beansprucht werden. Bestehende Konten wurden nicht zurückgesetzt. Für neue Konten wird das gewünschte Initialpasswort bei der Registrierung selbst eingegeben; es ist nicht öffentlich im Code hinterlegt.
