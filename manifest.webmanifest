@@ -1,4 +1,5 @@
 {
+  "id": "/grevingfit/",
   "name": "GrevingFit – dein Training",
   "short_name": "GrevingFit",
   "description": "Familien-Trainingspläne, Protokolle und Fortschritt an einem Ort.",
@@ -6,5 +7,13 @@
   "display": "standalone",
   "background_color": "#f3f7fc",
   "theme_color": "#1769e0",
-  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "scope": "./"
 }

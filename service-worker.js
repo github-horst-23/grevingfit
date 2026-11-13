@@ -1,4 +1,4 @@
-const CACHE = 'grevingfit-v73';
+const CACHE = 'grevingfit-v74';
 const ASSETS = ['./', './index.html', './styles.css', './app.js', './manifest.webmanifest', './icon.svg'];
 self.addEventListener('install', event => event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS))));
 self.addEventListener('message', event => {

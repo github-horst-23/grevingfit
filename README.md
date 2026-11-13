@@ -46,3 +46,13 @@ Unter **Settings → Personalisierung** lassen sich Startbereich, vollständiges
 ### Übungen und Sätze im Training abschließen
 
 In Vorlagen- und spontanen Trainings kann jeder Satz einzeln abgehakt werden. Sind alle Sätze abgehakt, gilt die Übung automatisch als fertig. Wird ein Haken entfernt, ist die Übung wieder offen. Mit „Fertig“ wird eine Übung auch unvollständig geschlossen, ohne weitere Sätze abzuhaken; nur abgehakte Sätze werden gewertet; „Heute auslassen“ protokolliert die Übung als nicht durchgeführt. Der Zwischenstand wird lokal gespeichert. Ausgelassene Übungen zählen nicht zu Satzanzahl, Volumen oder Übungsfortschritt und ersetzen keine bisherigen Katalogwerte. Eine aus dem Verlauf erstellte Vorlage übernimmt nur durchgeführte Übungen.
+
+
+### Persönliche Übungskataloge
+
+Jedes Familienkonto hat einen eigenen Übungskatalog, lokal und in seiner Cloud-Datenzeile. Neue, geänderte und gelöschte Übungen wirken nur auf dieses Konto. Das Gastprofil hat eine getrennte lokale Ablage. Bestehende kontogebundene Kataloge bleiben erhalten. Neue Profile können mit eigenständigen Kopien der Beispiele oder mit leerem Katalog starten. Gastdaten werden nur nach ausdrücklicher Auswahl kopiert. Auch Synchronisierungsstände sind kontogebunden.
+
+
+### Eigenständige App-Installation
+
+Die stabile Manifest-ID lautet `/grevingfit/`. GrevingFit verwendet `/grevingfit/`, Greving.Shop `/grevingshop/`; beide Apps werden dadurch getrennt erkannt. Die IDs bleiben bei künftigen Updates unverändert. Startadresse und Gültigkeitsbereich bleiben relativ zum jeweiligen App-Verzeichnis (`./`). Die aktualisierten Dateien müssen zuerst auf der jeweiligen App-Webadresse veröffentlicht werden. Bei einer bisherigen Installation ohne diese ID kann eine erneute Installation erforderlich sein; vorher die Daten sichern.
