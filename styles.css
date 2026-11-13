@@ -404,3 +404,16 @@ body{background:radial-gradient(ellipse at 50% -15%,#dceaff 0,transparent 46%),v
 @media(max-width:650px){.group-progress-grid{grid-template-columns:1fr;gap:12px}.group-progress-card{padding:14px}.group-progress-period{width:100%}.group-progress-chart .chart-label{font-size:13px}.group-progress-value{font-size:23px}}
 
 .group-progress-value.positive{color:var(--blue)}.group-progress-value.negative{color:var(--pink)}
+
+/* Compact overview: expand a group to reveal its chart and exercise values. */
+.group-progress-grid{align-items:start}
+.group-progress-card>.group-progress-card-head{display:flex;align-items:center;min-height:44px;cursor:pointer;list-style:none;gap:12px}
+.group-progress-card>.group-progress-card-head::-webkit-details-marker{display:none}
+.group-progress-name{flex:1;min-width:0;font-size:16px;font-weight:700;overflow-wrap:anywhere}
+.group-progress-chevron{color:var(--muted);font-size:18px;line-height:1;transition:transform .2s}
+.group-progress-card[open]>.group-progress-card-head .group-progress-chevron{transform:rotate(180deg)}
+.group-progress-card>.group-progress-card-head:focus-visible{outline:2px solid var(--blue);outline-offset:5px;border-radius:5px}
+.group-progress-card:not([open])>.group-progress-body{display:none}
+.group-progress-body{padding-top:8px}
+.group-progress-details h4{margin:14px 0 8px;font-size:12px;color:var(--text)}
+@media(prefers-reduced-motion:reduce){.group-progress-chevron{transition:none}}
