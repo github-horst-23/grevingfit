@@ -7,7 +7,7 @@
   <meta name="description" content="Trainingspläne und Trainingsverlauf für die Greving-Familie." />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=80" />
   <script id="cloudSdk" src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" async></script>
   <title>GrevingFit – dein Training</title>
 </head>
@@ -19,6 +19,7 @@
       </button>
       <div class="brand"><button class="brand-mark" id="profileMark" type="button" aria-label="Anmelden" title="Zum Anmelden">?</button><a class="brand-name" href="#home" aria-label="GrevingFit Startseite">GrevingFit<span class="brand-dot">.</span></a></div>
       <button class="icon-button" id="installBtn" hidden aria-label="App installieren" title="App installieren">↓</button>
+      <button class="icon-button update-button" id="updateApp" type="button" aria-label="Neue App-Version verfügbar" title="Neue App-Version verfügbar" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M9 18h6M16 9a4 4 0 1 0 0 4M16 6v3h-3"/></svg><span class="update-dot" aria-hidden="true"></span></button>
       <button class="icon-button sync-btn" id="syncBtn" type="button" aria-label="Jetzt synchronisieren" title="Jetzt synchronisieren"><svg class="sync-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.9-3M4 5v3h3M4 13a8 8 0 0 0 14.9 3M20 19v-3h-3"/></svg><span class="cloud-check" id="cloudCheck" hidden aria-hidden="true">✓</span></button>
     </header>
     <nav class="menu-panel" id="appMenu" aria-label="Hauptnavigation" hidden>
@@ -29,43 +30,13 @@
       <a href="#stats" data-route="stats"><span class="menu-link-inner"><svg class="menu-icon search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.2"/><path d="m15.4 15.4 4.4 4.4"/></svg>Auswertung</span></a>
       <a href="#settings" data-route="settings"><span class="menu-link-inner"><svg class="menu-icon shared-nav-icon" data-icon="settings" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h3m6 0h9M3 12h10m6 0h2M3 19h3m6 0h9"/><circle cx="9" cy="5" r="3"/><circle cx="16" cy="12" r="3"/><circle cx="9" cy="19" r="3"/></svg>Settings</span></a>
     </nav>
+    <aside id="updateNotice" class="update-notice" aria-label="App-Aktualisierung" hidden><div><strong>Neue App-Version verfügbar</strong><p>Aktualisieren, wenn es für dich passt.</p></div><div class="update-actions"><button class="button" id="applyUpdate" type="button">Jetzt aktualisieren</button><button class="button secondary" id="deferUpdate" type="button">Später</button></div></aside>
     <main id="app" class="page"></main>
   </div>
   <dialog id="modal"></dialog>
   <div id="toast" role="status" aria-live="polite"></div>
-  <script src="auth-session.js?v=79"></script>
-  <script src="app.js?v=79"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      let refreshing = false;
-      navigator.serviceWorker.addEventListener('controllerchange', () => {
-        if (refreshing) return;
-        refreshing = true;
-        location.reload();
-      });
-      window.addEventListener('load', async () => {
-        try {
-          const registration = await navigator.serviceWorker.register('./service-worker.js', { updateViaCache: 'none' });
-          let offeredWorker = null;
-          const offerUpdate = worker => {
-            if (!worker || !navigator.serviceWorker.controller || offeredWorker === worker) return;
-            offeredWorker = worker;
-            if (confirm('Eine neue Version der App ist verfügbar. Jetzt aktualisieren?')) worker.postMessage('skipWaiting');
-          };
-          offerUpdate(registration.waiting);
-          registration.addEventListener('updatefound', () => {
-            const worker = registration.installing;
-            if (!worker) return;
-            worker.addEventListener('statechange', () => {
-              if (worker.state === 'installed') offerUpdate(worker);
-            });
-          });
-          registration.update().catch(() => {});
-        } catch (error) {
-          console.warn('Service Worker konnte nicht registriert werden:', error);
-        }
-      });
-    }
-  </script>
+  <script src="auth-session.js?v=80"></script>
+  <script src="app.js?v=80"></script>
+
 </body>
 </html>

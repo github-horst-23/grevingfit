@@ -275,3 +275,42 @@ document.addEventListener('focusout',()=>setTimeout(updateInputEditingState,0));
 window.visualViewport?.addEventListener('resize',updateInputEditingState);
 window.addEventListener('resize',updateInputEditingState);
 window.addEventListener('orientationchange',()=>{inputViewportHeight=window.visualViewport?.height||innerHeight;updateInputEditingState()});
+
+// App-Aktualisierung wie in GrevingShop: erst nach ausdrücklicher Bestätigung.
+const APP_VERSION='80';
+let updateRegistration=null,updateWorker=null,availableVersion='',updateApplying=false,updateReloaded=false;
+function offerUpdate(worker,version){
+ if(!worker||!version||version===APP_VERSION||(availableVersion&&Number(version)<Number(availableVersion)))return;
+ updateWorker=worker;availableVersion=version;document.body.classList.add('app-update-ready');$('#updateApp').hidden=false;$('#updateNotice').hidden=false;
+}
+function requestUpdateStatus(worker){worker?.postMessage({type:'GET_UPDATE_STATUS'})}
+function reloadApprovedUpdate(){if(updateApplying&&!updateReloaded){updateReloaded=true;window.location.reload()}}
+async function acceptAppUpdate(){
+ if(!updateWorker||updateApplying)return;
+ if(cloudSaving||$('#sessionForm')||$('#modal').open||document.querySelector('#app form[data-dirty="true"]')){toast('Speichere zuerst dein Training zwischen oder speichere und schließe die offene Bearbeitung.');return}
+ updateApplying=true;$('#applyUpdate').disabled=true;$('#applyUpdate').textContent='Wird aktualisiert …';
+ try{updateWorker.postMessage({type:'APPROVE_UPDATE',version:availableVersion})}catch{updateApplying=false;$('#applyUpdate').disabled=false;$('#applyUpdate').textContent='Jetzt aktualisieren';toast('Update derzeit nicht erreichbar. Bitte später erneut versuchen.')} 
+}
+function setupAppUpdates(){
+ $('#applyUpdate').onclick=acceptAppUpdate;
+ $('#deferUpdate').onclick=()=>{$('#updateNotice').hidden=true};
+ $('#updateApp').onclick=()=>{$('#updateNotice').hidden=false};
+ for(const type of ['input','change'])document.addEventListener(type,event=>{const form=event.target.closest?.('form');if(form)form.dataset.dirty='true'});
+ if(!('serviceWorker'in navigator))return;
+ navigator.serviceWorker.addEventListener('message',event=>{
+  const message=event.data;
+  if(message?.type==='UPDATE_STATUS'){const worker=event.source||updateRegistration?.waiting||updateRegistration?.active;if(message.version===APP_VERSION&&!message.hasApproved)worker?.postMessage({type:'INITIALIZE_CURRENT_VERSION',version:APP_VERSION});else offerUpdate(worker,message.version)}
+  if(message?.type==='UPDATE_APPLIED'&&message.version===availableVersion)reloadApprovedUpdate();
+  if(message?.type==='UPDATE_FAILED'&&message.version===availableVersion){updateApplying=false;$('#applyUpdate').disabled=false;$('#applyUpdate').textContent='Jetzt aktualisieren';toast('Das Update ist noch nicht vollständig bereit. Bitte später erneut versuchen.')}
+ });
+ navigator.serviceWorker.addEventListener('controllerchange',reloadApprovedUpdate);
+ navigator.serviceWorker.register('./service-worker.js',{updateViaCache:'none'}).then(registration=>{
+  updateRegistration=registration;
+  requestUpdateStatus(registration.waiting||registration.active);
+  registration.addEventListener('updatefound',()=>{const installing=registration.installing;if(installing)installing.addEventListener('statechange',()=>{if(installing.state==='installed')requestUpdateStatus(registration.waiting||installing)})});
+  const check=()=>{if(document.visibilityState==='visible'){registration.update().catch(()=>{});requestUpdateStatus(registration.waiting||registration.active)}};
+  document.addEventListener('visibilitychange',check);check();setInterval(check,60*60*1000);
+ }).catch(()=>{});
+}
+
+setupAppUpdates();
