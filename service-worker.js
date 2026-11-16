@@ -1,5 +1,5 @@
-const CACHE = 'grevingfit-v76';
-const ASSETS = ['./', './index.html', './styles.css', './app.js', './manifest.webmanifest', './icon.svg'];
+const CACHE = 'grevingfit-v79';
+const ASSETS = ['./', './index.html', './styles.css', './app.js?v=79', './auth-session.js?v=79', './manifest.webmanifest', './icon.svg'];
 self.addEventListener('install', event => event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS))));
 self.addEventListener('message', event => {
   if (event.data === 'skipWaiting') self.skipWaiting();

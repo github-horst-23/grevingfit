@@ -22,7 +22,7 @@
       <button class="icon-button sync-btn" id="syncBtn" type="button" aria-label="Jetzt synchronisieren" title="Jetzt synchronisieren"><svg class="sync-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.9-3M4 5v3h3M4 13a8 8 0 0 0 14.9 3M20 19v-3h-3"/></svg><span class="cloud-check" id="cloudCheck" hidden aria-hidden="true">✓</span></button>
     </header>
     <nav class="menu-panel" id="appMenu" aria-label="Hauptnavigation" hidden>
-      <a href="#home" data-route="home"><span class="menu-link-inner"><span>⌂</span>Heute</span></a>
+      <a href="#home" data-route="home"><span class="menu-link-inner"><svg class="menu-icon shared-nav-icon home-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 3l9 7M5 9v12h14V9M9 21v-8h6v8"/></svg>Heute</span></a>
       <a href="#plan" data-route="plan"><span class="menu-link-inner"><svg class="menu-icon shared-nav-icon" data-icon="lists" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg>Einheiten & Vorlagen</span></a>
       <a href="#catalog" data-route="catalog"><span class="menu-link-inner"><svg class="menu-icon shared-nav-icon" data-icon="catalog" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h12a3 3 0 0 1 3 3v14H7a3 3 0 0 1-3-3V4Zm0 14a3 3 0 0 1 3-3h12M8 8h7M8 11h5"/></svg>Übungskatalog</span></a>
       <a href="#history" data-route="history"><span class="menu-link-inner"><svg class="menu-icon history-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5v14h16M7 15l4-4 3 2 6-7"/></svg>Verlauf</span></a>
@@ -33,7 +33,8 @@
   </div>
   <dialog id="modal"></dialog>
   <div id="toast" role="status" aria-live="polite"></div>
-  <script src="app.js"></script>
+  <script src="auth-session.js?v=79"></script>
+  <script src="app.js?v=79"></script>
   <script>
     if ('serviceWorker' in navigator) {
       let refreshing = false;

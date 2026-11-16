@@ -420,3 +420,18 @@ body{background:radial-gradient(ellipse at 50% -15%,#dceaff 0,transparent 46%),v
 
 /* Gemeinsame GrevingShop-Navigationssymbole. */
 .menu-panel a .shared-nav-icon{width:26px;height:26px;flex:0 0 26px;fill:none;stroke:var(--blue);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* Anmeldung entspricht dem GrevingShop-Dialog. */
+#modal.login-dialog{font:15px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;width:min(480px,calc(100% - 24px));padding:20px;max-height:90dvh;overflow-y:auto;box-shadow:0 24px 100px #0003}
+#modal.login-dialog::backdrop{background:#06152b88;backdrop-filter:blur(4px)}
+#modal.login-dialog .dialog-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;gap:12px}
+#modal.login-dialog h2{font:700 20px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:-.5px;margin:0}
+#modal.login-dialog p{font-size:15px;line-height:1.5;margin:8px 0}
+#modal.login-dialog .field{display:grid;gap:6px;margin:12px 0}
+#modal.login-dialog .field label{font-size:12px;font-weight:650;color:var(--text)}
+#modal.login-dialog .field input{font:16px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--panel);min-height:0}
+#modal.login-dialog .actions{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-top:14px}
+#modal.login-dialog .button{font:650 15px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;padding:11px 17px;border:1px solid transparent;min-height:44px}
+#modal.login-dialog .close{min-height:44px;border:0;background:var(--panel2);color:var(--text);width:38px;font:22px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;border-radius:12px;cursor:pointer;flex-shrink:0}
+#modal.login-dialog p.error{font-size:13px;color:#c53648;white-space:pre-line}
+:root[data-theme="dark"] #modal.login-dialog p.error{color:#ff9aab}

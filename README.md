@@ -23,11 +23,11 @@ Es gibt keinen Build-Schritt. `index.html`, `app.js`, `styles.css`, `manifest.we
 
 ## Supabase-Cloud für vier Personen
 
-Die App enthält die URL und den Publishable Key des konfigurierten Supabase-Projekts. Jeder Benutzer erstellt ein eigenes Supabase-Konto mit E-Mail und Passwort. Die Profilwahl ist an die jeweils freigegebene E-Mail-Adresse gebunden; die Zuordnung ist in App und Datenbankregel hinterlegt. Die Datenbank bindet Trainingseinträge an die Supabase-User-ID und schützt sie per Row Level Security.
+Die App enthält die URL und den Publishable Key des konfigurierten Supabase-Projekts. Die vier Familienkonten werden in Supabase administrativ bereitgestellt. Die App bietet keine öffentliche Registrierung; Anmeldung erfolgt mit E-Mail-Adresse und dem aktuellen Kontopasswort (bei der ersten Anmeldung mit dem dort gesetzten Initialpasswort). Die Profilwahl ist an die jeweils freigegebene E-Mail-Adresse gebunden; die Zuordnung ist in App und Datenbankregel hinterlegt. Die Datenbank bindet Trainingseinträge an die Supabase-User-ID und schützt sie per Row Level Security.
 
 1. Im Supabase-Projekt unter **SQL Editor** den Inhalt von [`supabase-setup.sql`](supabase-setup.sql) ausführen. Das Skript legt Datentabellen und RLS-Regeln an, einschließlich der Profil-/E-Mail-Zuordnung. Führe es nach Regeländerungen erneut aus; es kann wiederholt werden.
 2. Unter **Authentication → Providers** E-Mail-Anmeldung aktivieren. Unter **URL Configuration** die HTTPS-URL von GrevingFit als Site URL setzen.
-3. GrevingFit aufrufen, oben rechts auf das Synchronisierungssymbol tippen, Konto erstellen, das zur E-Mail passende Profil auswählen und E-Mail sowie Passwort eingeben. Abweichende Zuordnungen werden abgelehnt. Wenn E-Mail-Bestätigung eingeschaltet ist, erst die Mail bestätigen und danach anmelden.
+3. GrevingFit aufrufen und oben auf **?** oder unter Settings auf **Anmelden** tippen. E-Mail-Adresse und bestehendes Passwort eingeben; das Familienprofil wird automatisch zugeordnet.
 4. Auf weiteren Geräten dieselbe HTTPS-Adresse öffnen und mit dem Konto dieses Profils anmelden.
 
 Jede Person braucht eigene Zugangsdaten. Ein Profilname kann nur von einem Konto beansprucht werden. Die vier Konten teilen zwar dasselbe Supabase-Projekt, aber die RLS-Regeln erlauben jedem Konto nur den Zugriff auf seine eigene Datenzeile. Verwende niemals einen Supabase-Secret- oder Service-Role-Key im Frontend.
@@ -64,3 +64,14 @@ GrevingFit und GrevingShop nutzen dasselbe Supabase-Auth-Projekt und damit diese
 Auf ausdrücklichen Wunsch ist die E-Mail-Bestätigung im gemeinsamen Projekt ausgeschaltet. Neue Registrierungen benötigen dadurch keine Bestätigungsmail. Die Datenfreigaben bleiben bestehen, prüfen aber die E-Mail-Adresse ohne Besitznachweis. Noch nicht registrierte freigegebene Adressen können deshalb von Dritten beansprucht werden. Bestehende Konten wurden nicht zurückgesetzt. Für neue Konten wird das gewünschte Initialpasswort bei der Registrierung selbst eingegeben; es ist nicht öffentlich im Code hinterlegt.
 
 Die Navigationssymbole für Settings, Übungskatalog und Einheiten/Vorlagen entsprechen den Symbolen von GrevingShop (Regler, Katalogbuch und Liste), mit derselben SVG-Geometrie und Strichstärke.
+
+
+### Anmeldung und Katalog ab Version 77
+
+Der Anmeldedialog entspricht GrevingShop: E-Mail-Adresse, Passwort, Abbrechen und Anmelden. Es gibt keine Kontoerstellung in der App. Die Profile werden anhand der vorhandenen Konten zugeordnet. Der Knopf **Neue Katalogübung** befindet sich direkt oben im Übungskatalog.
+
+## Anmeldung für 30 Tage beibehalten
+
+Version 79: Die bestehende Supabase-Sitzung wird für 30 Tage seit der letzten Nutzung lokal aufbewahrt. Nutzung und Token-Erneuerung verlängern diese Frist. Bestehende Anmeldungen werden ohne erzwungenen Wechsel übernommen. Passwörter werden nicht gespeichert; kurze Zugangstokens werden weiterhin automatisch erneuert. Nach Standby und Verbindungswechsel wird die Sitzung erneut aus dem sicheren Auth-Ablauf aufgenommen. „Abmelden“ beendet nur die aktuelle App-Sitzung, nicht die anderen Apps oder Geräte.
+
+Eine serverseitig widerrufene Sitzung, gelöschte Browserdaten oder ein kürzeres Supabase-Limit können eine frühere Neuanmeldung erfordern. Im gemeinsamen Supabase-Projekt unter Authentication → Sessions dürfen Time-box und Inactivity timeout nicht kürzer als 30 Tage sein; Single session per user muss für parallele Apps/Geräte ausgeschaltet sein. Diese Serverwerte wurden nicht geändert oder überprüft. Keine 30-Tage-Verlängerung der JWT-Laufzeit vornehmen.
