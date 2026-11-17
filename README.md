@@ -78,3 +78,6 @@ Eine serverseitig widerrufene Sitzung, gelöschte Browserdaten oder ein kürzere
 
 ### App-Aktualisierungen ab Version 80
 Neue Versionen werden wie in GrevingShop mit „Jetzt aktualisieren“ und „Später“ angeboten. Über das Aktualisierungssymbol im Kopfbereich lässt sich ein verschobener Hinweis wieder öffnen. Erst nach Zustimmung wird die neue Fassung aktiviert. Laufende Trainings zuerst zwischenspeichern und offene Bearbeitungen schließen.
+
+### Cardio-Dauer ab Version 81
+Bei Cardio-Übungen lässt sich im laufenden Training die Zeiteinheit zwischen Sekunden und Minuten wechseln. Minuten erlauben Dezimalwerte (z. B. 12,5). Beim Wechsel wird die Dauer umgerechnet; Entwürfe und Verlauf behalten die Werte. Intern werden Zeiten einheitlich in Sekunden gespeichert, damit Auswertung und Bestleistungen vergleichbar bleiben. Trainingsziele im Katalog und in Vorlagen können z. B. „20 Min.“ lauten.

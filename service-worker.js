@@ -1,7 +1,7 @@
-const VERSION='80';
-const CACHE='grevingfit-v80';
+const VERSION='81';
+const CACHE='grevingfit-v81';
 const CONTROL='grevingfit-update-control';
-const ASSETS=['./','./index.html','./styles.css?v=80','./app.js?v=80','./auth-session.js?v=80','./manifest.webmanifest','./icon.svg'];
+const ASSETS=['./','./index.html','./styles.css?v=81','./app.js?v=81','./auth-session.js?v=81','./manifest.webmanifest','./icon.svg'];
 const approvedKey=()=>new URL('./__approved_app_cache__',self.registration.scope).href;
 async function approvedCache(){const state=await caches.open(CONTROL),saved=await state.match(approvedKey());return saved?await saved.text():CACHE}
 async function setApproved(name){const state=await caches.open(CONTROL);await state.put(approvedKey(),new Response(name))}
