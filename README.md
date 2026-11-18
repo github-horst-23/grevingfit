@@ -81,3 +81,6 @@ Neue Versionen werden wie in GrevingShop mit „Jetzt aktualisieren“ und „Sp
 
 ### Cardio-Dauer ab Version 81
 Bei Cardio-Übungen lässt sich im laufenden Training die Zeiteinheit zwischen Sekunden und Minuten wechseln. Minuten erlauben Dezimalwerte (z. B. 12,5). Beim Wechsel wird die Dauer umgerechnet; Entwürfe und Verlauf behalten die Werte. Intern werden Zeiten einheitlich in Sekunden gespeichert, damit Auswertung und Bestleistungen vergleichbar bleiben. Trainingsziele im Katalog und in Vorlagen können z. B. „20 Min.“ lauten.
+
+### Kalender-Farbskala ab Version 82
+Die Farbintensität der Trainingstage vergleicht die Anzahl ausgeführter Übungen mit dem höchsten Tageswert der gesamten Trainingshistorie. Die Skala ist damit über alle Monate vergleichbar. Mehrere Einheiten am selben Tag werden addiert; ausgelassene Übungen zählen nicht.
