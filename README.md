@@ -87,3 +87,6 @@ Die Farbintensität der Trainingstage vergleicht die Anzahl ausgeführter Übung
 
 ### Kompakte Vorlagen auf Smartphones ab Version 83
 Übungsinformationen und die vier Aktionen zum Verschieben, Bearbeiten und Entfernen stehen nebeneinander. Bei Platzmangel wird der Übungsname mit Auslassungspunkten gekürzt; der vollständige Name bleibt für Vorlesefunktionen und im Bearbeitungsdialog erhalten.
+
+### Lesbare Übungsnamen ab Version 84
+Übungsnamen in Vorlagen nutzen die volle Breite und bis zu zwei Zeilen. Antippen klappt den vollständigen Namen auf oder wieder ein. Darunter stehen Satzangaben sowie die Pfeile zum Verschieben und ein ⋯-Menü mit Bearbeiten und Entfernen. Das Menü schließt beim Klick außerhalb oder mit Escape; bestehende Löschbestätigung und Rückgängig-Funktion bleiben erhalten.

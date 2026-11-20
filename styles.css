@@ -443,11 +443,18 @@ body{background:radial-gradient(ellipse at 50% -15%,#dceaff 0,transparent 46%),v
 
 .session-duration-unit{display:flex;align-items:center;justify-content:flex-end;gap:8px;font-size:12px;color:var(--muted);margin:10px 0}.session-duration-unit select{width:auto;max-width:160px;min-height:44px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--panel2);color:var(--text);font-size:16px}
 
-/* Vorlagen bleiben auf Smartphones in einer gemeinsamen Zeile bedienbar. */
-@media(max-width:650px){
- .template-list .template-exercise-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:6px}
- .template-list .template-exercise-row .exercise-info{width:auto;min-width:0}
- .template-list .template-exercise-row .exercise-info strong,.template-list .template-exercise-row .exercise-info span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;overflow-wrap:normal}
- .template-list .template-exercise-row .exercise-actions{grid-column:2;grid-row:1;display:flex;flex-wrap:nowrap;gap:0;align-items:center;margin:0}
- .template-list .template-exercise-row .icon-action{flex:0 0 44px;width:44px;min-width:44px;min-height:44px;padding:0}
-}
+/* Lesbare Übungsnamen und kompakte Aktionen wie im bestätigten Entwurf. */
+.template-list .template-exercise-row{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:3px 6px;padding:12px 0 5px}
+.template-list .template-exercise-name{grid-column:1/-1;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;overflow-wrap:anywhere;white-space:normal;width:100%;min-width:0;min-height:0;padding:0;border:0;border-radius:0;background:transparent;color:var(--text);text-align:left;font-family:inherit;font-size:14px;font-weight:650;line-height:1.4}
+.template-list .template-exercise-name[aria-expanded="true"]{-webkit-line-clamp:unset}
+.template-list .template-exercise-meta{grid-column:1;grid-row:2;min-width:0;color:var(--muted);font-size:12px;overflow-wrap:anywhere}
+.template-list .template-exercise-row .exercise-actions{grid-column:2;grid-row:2;display:flex;flex-wrap:nowrap;gap:0;align-items:center;margin:0}
+.template-list .template-exercise-row .icon-action{flex:0 0 44px;display:grid;place-items:center;width:44px;height:44px;min-width:44px;min-height:44px;padding:0}
+.template-list .exercise-more-toggle{font-size:24px}
+.template-list .exercise-more-toggle[aria-expanded="true"]{background:var(--panel2);color:var(--blue)}
+.template-list .exercise-more-menu{position:absolute;right:0;top:calc(100% - 7px);z-index:10;min-width:180px;max-width:100%;padding:5px;background:var(--panel);border:1px solid var(--line);border-radius:13px;box-shadow:0 8px 24px color-mix(in srgb,var(--text) 16%,transparent)}
+.template-list .exercise-more-menu.opens-up{top:auto;bottom:44px}
+.template-list .exercise-more-menu[hidden]{display:none}
+.template-list .exercise-more-menu button{display:block;width:100%;min-height:44px;padding:10px 12px;border:0;border-radius:8px;background:transparent;color:var(--text);font-weight:500;line-height:1.4;font-family:inherit;font-size:14px;text-align:left}
+.template-list .exercise-more-menu button:hover{background:var(--panel2)}
+:root[data-font-size="large"] .template-exercise-name{font-size:16px}
