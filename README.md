@@ -84,3 +84,6 @@ Bei Cardio-Übungen lässt sich im laufenden Training die Zeiteinheit zwischen S
 
 ### Kalender-Farbskala ab Version 82
 Die Farbintensität der Trainingstage vergleicht die Anzahl ausgeführter Übungen mit dem höchsten Tageswert der gesamten Trainingshistorie. Die Skala ist damit über alle Monate vergleichbar. Mehrere Einheiten am selben Tag werden addiert; ausgelassene Übungen zählen nicht.
+
+### Kompakte Vorlagen auf Smartphones ab Version 83
+Übungsinformationen und die vier Aktionen zum Verschieben, Bearbeiten und Entfernen stehen nebeneinander. Bei Platzmangel wird der Übungsname mit Auslassungspunkten gekürzt; der vollständige Name bleibt für Vorlesefunktionen und im Bearbeitungsdialog erhalten.
